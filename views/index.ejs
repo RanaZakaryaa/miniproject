@@ -1,0 +1,29 @@
+<% include partials/header %>
+<h1>Register</h1>
+  <% if(errors != undefined){ %>
+    <ul>
+    <% errors.forEach(function(error){ %>
+      <li><%= error.msg %></li>
+ <% }) %>
+    </ul>
+<%  } %>
+  <form method="POST" action="/users/add">
+    <label> Username </label><br>
+    <input type="text" name="username">
+    <br>
+    <label> Password </label><br>
+    <input type="password" name="password">
+    <br>
+    <br>
+    <input type="submit" value="Regsiter">
+    <br>
+    <br>
+    <input type="submit" value="Login">
+  </form>
+    <h1><%= title %></h1>
+    <ul>
+    <% users.forEach(function(user){ %>
+      <li><%= user.username %></li>
+ <% }) %>
+</ul>
+  <% include partials/footer %>
